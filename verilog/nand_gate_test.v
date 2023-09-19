@@ -1,4 +1,4 @@
-module nand_gate_tb;			//module name
+module nand_gate_test;			//module name
 
   /* Make a regular pulsing clock. */	//tracks every 5 ns
   reg clk = 0;
