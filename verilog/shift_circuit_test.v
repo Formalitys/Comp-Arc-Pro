@@ -8,7 +8,7 @@ module shift_circuit_tb;		//module name
   reg [1:0] shift;
 
   initial begin				//load new values
-    	   a = 4'b0010; shift = 2'b00;	//every 10 nano
+    	 a = 4'b0010; shift = 2'b00;	//every 10 nano
     # 10 a = 4'b1000; shift = 2'b01;	//seconds
     # 10 a = 4'b1111; shift = 2'b10;
     # 10 a = 4'b1001; shift = 2'b11;
@@ -30,7 +30,7 @@ module shift_circuit_tb;		//module name
   end
 
   initial 				//prints to screen when values change
-    $monitor("At time %t, a(%b) << shift(%b) = l_shift(%b), a(%b) >> shift(%b) = r_shift(%b)",  
+    $monitor("At time %t, a(%b) << l_shift(%b) = (%b), a(%b) >> r_shift(%b) = (%b)",  
     		$time, a, shift, l_shift, a, shift, r_shift);   
  									
 endmodule //test
