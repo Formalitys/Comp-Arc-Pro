@@ -1,0 +1,79 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/aarch64-linux-gnu/ivl/va_math.vpi";
+S_0xaaab03657a80 .scope module, "nand_gate_test" "nand_gate_test" 2 1;
+ .timescale 0 0;
+v0xaaab0366bb30_0 .var "a", 0 0;
+v0xaaab0366bbd0_0 .var "b", 0 0;
+v0xaaab0366bca0_0 .var "clk", 0 0;
+v0xaaab0366bd70_0 .net "y", 0 0, L_0xaaab0366bf80;  1 drivers
+S_0xaaab03657c10 .scope module, "a0" "nand_gate" 2 17, 3 1 0, S_0xaaab03657a80;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0xaaab0366be40 .functor AND 1, v0xaaab0366bb30_0, v0xaaab0366bbd0_0, C4<1>, C4<1>;
+L_0xaaab0366bf80 .functor NOT 1, L_0xaaab0366be40, C4<0>, C4<0>, C4<0>;
+v0xaaab03657e40_0 .net *"_ivl_0", 0 0, L_0xaaab0366be40;  1 drivers
+v0xaaab0366b890_0 .net "a", 0 0, v0xaaab0366bb30_0;  1 drivers
+v0xaaab0366b950_0 .net "b", 0 0, v0xaaab0366bbd0_0;  1 drivers
+v0xaaab0366b9f0_0 .net "y", 0 0, L_0xaaab0366bf80;  alias, 1 drivers
+    .scope S_0xaaab03657a80;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xaaab0366bca0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xaaab0366bb30_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xaaab0366bbd0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0xaaab03657a80;
+T_1 ;
+    %delay 5, 0;
+    %load/vec4 v0xaaab0366bca0_0;
+    %nor/r;
+    %store/vec4 v0xaaab0366bca0_0, 0, 1;
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0xaaab03657a80;
+T_2 ;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xaaab0366bb30_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0xaaab0366bbd0_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0xaaab0366bb30_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 13 "$finish" {0 0 0};
+    %end;
+    .thread T_2;
+    .scope S_0xaaab03657a80;
+T_3 ;
+    %vpi_call 2 20 "$dumpfile", "nand_gate.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, v0xaaab0366bca0_0 {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000001, v0xaaab0366bb30_0 {0 0 0};
+    %vpi_call 2 23 "$dumpvars", 32'sb00000000000000000000000000000010, v0xaaab0366bbd0_0 {0 0 0};
+    %vpi_call 2 24 "$dumpvars", 32'sb00000000000000000000000000000011, v0xaaab0366bd70_0 {0 0 0};
+    %end;
+    .thread T_3;
+    .scope S_0xaaab03657a80;
+T_4 ;
+    %vpi_call 2 28 "$monitor", "At time %t, a(%b), b(%b) = y(%b)", $time, v0xaaab0366bb30_0, v0xaaab0366bbd0_0, v0xaaab0366bd70_0 {0 0 0};
+    %end;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nand_gate_test.v";
+    "nand_gate.v";
