@@ -1,0 +1,54 @@
+$date
+	Thu Sep 21 03:02:36 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module shift_circuit_tb $end
+$var reg 1 ! clk $end
+$upscope $end
+$scope module shift_circuit_tb $end
+$var reg 4 " a [3:0] $end
+$upscope $end
+$scope module shift_circuit_tb $end
+$var wire 4 # l_shift [3:0] $end
+$upscope $end
+$scope module shift_circuit_tb $end
+$var wire 4 $ r_shift [3:0] $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1 $
+b100 #
+b10 "
+0!
+$end
+#5
+1!
+#10
+b0 #
+b100 $
+0!
+b1000 "
+#15
+1!
+#20
+b1110 #
+b111 $
+0!
+b1111 "
+#25
+1!
+#30
+b10 #
+b100 $
+0!
+b1001 "
+#35
+1!
+#40
+0!
