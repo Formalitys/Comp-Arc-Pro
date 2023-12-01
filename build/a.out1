@@ -1,0 +1,22 @@
+**** module/scope: divider_4bit
+     Flip-Flops   : 0
+     Logic Gates  : 235
+     ADDER[4]: 4 units
+     EQUALITY[32]: 1 units
+     MAGNITUDE[4]: 4 units
+     MUX[2]: 53 slices
+     LPM[8]: 4 unaccounted
+     LPM[40]: 1 unaccounted
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
+**** TOTALS
+     Flip-Flops   : 0
+     Logic Gates  : 235
+     ADDER[4]: 4 units
+     EQUALITY[32]: 1 units
+     MAGNITUDE[4]: 4 units
+     MUX[2]: 53 slices
+     LPM[8]: 4 unaccounted
+     LPM[40]: 1 unaccounted
+     LOG[13]: 1 unaccounted
+     LOG[14]: 1 unaccounted
